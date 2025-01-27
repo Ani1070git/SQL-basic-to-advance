@@ -1,7 +1,7 @@
 # SQL-basic-to-advance
 This Repo contains SQL interview questions along with their answers. Each question is followed by a detailed explanation of the query.
 
-### Table Used for Questions
+### Table 
 
 This table will be referenced for solving SQL questions:
 
