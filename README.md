@@ -40,3 +40,27 @@ SUM(Salary): Adds up the values in the Salary column.
 AS TotalSalary: Renames the result as TotalSalary.
 
 WHERE Department = 'HR': Filters only the rows where the Department is 'HR'.
+
+# Question 3: Find employees who joined after January 1, 2022
+### Query:
+```sql
+SELECT Name, JoiningDate
+FROM Employees
+WHERE JoiningDate > '2022-01-01';
+```
+# Explaination :
+WHERE JoiningDate > '2022-01-01': Compares the JoiningDate column to a specific date.
+
+Dates in SQL are compared chronologically, so this will return employees who joined after January 1, 2022.
+
+# Question 4: Count the number of employees under each department
+### Query:
+```sql
+SELECT Department, COUNT(*) AS EmployeeCount
+FROM Employees
+GROUP BY Department;
+```
+# Explaination :
+COUNT(*): Counts the number of rows (employees) in each group.
+
+GROUP BY Department: Groups the rows by the Department column, so the count is calculated per department.
