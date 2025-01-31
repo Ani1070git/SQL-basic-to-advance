@@ -72,3 +72,7 @@ SELECT Department, MAX(Salary) AS HighestSalary
 FROM Employees
 GROUP BY Department;
 ```
+# Explanation:
+MAX(Salary): Finds the highest salary in each department.
+
+GROUP BY Department: Groups the data by department so that MAX(Salary) is calculated per department.
