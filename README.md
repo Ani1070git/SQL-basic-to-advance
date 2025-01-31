@@ -64,3 +64,11 @@ GROUP BY Department;
 COUNT(*): Counts the number of rows (employees) in each group.
 
 GROUP BY Department: Groups the rows by the Department column, so the count is calculated per department.
+
+Question 5: Find the highest salary in each department
+### Query:
+```sql
+SELECT Department, MAX(Salary) AS HighestSalary
+FROM Employees
+GROUP BY Department;
+```
