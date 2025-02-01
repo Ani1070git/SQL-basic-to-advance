@@ -65,7 +65,7 @@ COUNT(*): Counts the number of rows (employees) in each group.
 
 GROUP BY Department: Groups the rows by the Department column, so the count is calculated per department.
 
-Question 5: Find the highest salary in each department
+# Question 5: Find the highest salary in each department
 ### Query:
 ```sql
 SELECT Department, MAX(Salary) AS HighestSalary
@@ -89,4 +89,17 @@ SELECT MAX(Salary) FROM Employees: Gets the highest salary.
 
 WHERE Salary < (SELECT MAX(Salary) FROM Employees): Filters out the highest salary so that MAX(Salary) now gives the second highest.
 
-Question 7: Retrieve the department-wise average salary, but only for departments where the average salary is greater than 60,000
+# Question 7: Retrieve the department-wise average salary, but only for departments where the average salary is greater than 60,000
+### Query:
+```sql
+SELECT Department, AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+```
+# Explanation
+AVG(Salary): Calculates the average salary per department.
+
+GROUP BY Department: Groups employees by department to calculate separate averages.
+
+HAVING AVG(Salary) > 60000: Filters only departments where the average salary exceeds 60,000.
