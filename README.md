@@ -76,3 +76,17 @@ GROUP BY Department;
 MAX(Salary): Finds the highest salary in each department.
 
 GROUP BY Department: Groups the data by department so that MAX(Salary) is calculated per department.
+
+Question 6: Find the second highest salary in the Employees table
+### Query:
+```sql
+SELECT MAX(Salary) AS SecondHighestSalary 
+FROM Employees 
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+```
+# Explanation
+SELECT MAX(Salary) FROM Employees: Gets the highest salary.
+
+WHERE Salary < (SELECT MAX(Salary) FROM Employees): Filters out the highest salary so that MAX(Salary) now gives the second highest.
+
+Question 7: Retrieve the department-wise average salary, but only for departments where the average salary is greater than 60,000
