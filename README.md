@@ -103,3 +103,51 @@ AVG(Salary): Calculates the average salary per department.
 GROUP BY Department: Groups employees by department to calculate separate averages.
 
 HAVING AVG(Salary) > 60000: Filters only departments where the average salary exceeds 60,000.
+
+### Question 8: Retrieve the Employees with the Highest Salary in Each Department
+### Query:
+```sql
+SELECT e1.Name, e1.Department, e1.Salary
+FROM Employees e1
+WHERE e1.Salary = (
+    SELECT MAX(e2.Salary) 
+    FROM Employees e2 
+    WHERE e2.Department = e1.Department
+);
+```
+## Explanation
+e1 represents the main query (fetching employee names, departments, and salaries).
+
+e2 represents the subquery (finding the max salary per department).
+
+For each employee (e1), the subquery finds the maximum salary (MAX(Salary)) for their department (e2.Department = e1.Department).
+
+This means the subquery returns the highest salary per department.
+
+The main query compares each employee’s salary to the highest salary in their department.
+
+If the salary matches the maximum, that employee is selected.
+
+### Question 9: Find Employees Who Earn More Than Their Department’s Average Salary
+### Query:
+```sql
+SELECT Name, Department, Salary
+FROM Employees e1
+WHERE Salary > (
+    SELECT AVG(e2.Salary)
+    FROM Employees e2
+    WHERE e2.Department = e1.Department
+);
+```
+## Explanation
+e1 is the main query (fetching employees who earn more than their department’s average salary).
+
+e2 is the subquery (calculating the average salary per department).
+
+It calculates the average salary (AVG(Salary)) for each department (e2.Department = e1.Department).
+
+This means the subquery returns the department's average salary.
+
+The main query checks each employee’s salary.
+
+If an employee’s salary is greater than their department’s average, they are included in the result.
