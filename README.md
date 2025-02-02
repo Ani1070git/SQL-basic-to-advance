@@ -124,10 +124,6 @@ For each employee (e1), the subquery finds the maximum salary (MAX(Salary)) for 
 
 This means the subquery returns the highest salary per department.
 
-The main query compares each employee’s salary to the highest salary in their department.
-
-If the salary matches the maximum, that employee is selected.
-
 ### Question 9: Find Employees Who Earn More Than Their Department’s Average Salary
 ### Query:
 ```sql
@@ -147,7 +143,3 @@ e2 is the subquery (calculating the average salary per department).
 It calculates the average salary (AVG(Salary)) for each department (e2.Department = e1.Department).
 
 This means the subquery returns the department's average salary.
-
-The main query checks each employee’s salary.
-
-If an employee’s salary is greater than their department’s average, they are included in the result.
