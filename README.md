@@ -104,7 +104,7 @@ GROUP BY Department: Groups employees by department to calculate separate averag
 
 HAVING AVG(Salary) > 60000: Filters only departments where the average salary exceeds 60,000.
 
-### Question 8: Retrieve the Employees with the Highest Salary in Each Department
+## Question 8: Retrieve the Employees with the Highest Salary in Each Department
 ### Query:
 ```sql
 SELECT e1.Name, e1.Department, e1.Salary
@@ -124,7 +124,7 @@ For each employee (e1), the subquery finds the maximum salary (MAX(Salary)) for 
 
 This means the subquery returns the highest salary per department.
 
-### Question 9: Find Employees Who Earn More Than Their Department’s Average Salary
+## Question 9: Find Employees Who Earn More Than Their Department’s Average Salary
 ### Query:
 ```sql
 SELECT Name, Department, Salary
@@ -144,7 +144,7 @@ It calculates the average salary (AVG(Salary)) for each department (e2.Departmen
 
 This means the subquery returns the department's average salary.
 
-### Question 10: Find the Employees Who Were Hired Before Their Manager
+## Question 10: Find the Employees Who Were Hired Before Their Manager
 ### Query:
 ```sql
 SELECT e.Name AS EmployeeName, e.JoiningDate AS EmployeeJoiningDate, 
