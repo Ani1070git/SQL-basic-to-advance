@@ -143,3 +143,21 @@ e2 is the subquery (calculating the average salary per department).
 It calculates the average salary (AVG(Salary)) for each department (e2.Department = e1.Department).
 
 This means the subquery returns the department's average salary.
+
+### Question 10: Find the Employees Who Were Hired Before Their Manager
+### Query:
+```sql
+SELECT e.Name AS EmployeeName, e.JoiningDate AS EmployeeJoiningDate, 
+       m.Name AS ManagerName, m.JoiningDate AS ManagerJoiningDate
+FROM Employees e
+JOIN Employees m ON e.ManagerID = m.EmployeeID
+WHERE e.JoiningDate < m.JoiningDate;
+```
+## Explanation
+The Employees table is joined to itself:
+
+e represents the employee , m represents the manager.
+
+Each employee (e) is linked to their manager (m) using ManagerID and EmployeeID.
+
+This ensures that we only select employees whose Joining Date is earlier than their manager’s.
